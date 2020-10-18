@@ -5,7 +5,7 @@ object FileValidator {
   }
 
   def validationNumberRoutes(list: List[String]): Boolean = {
-    list.size <= 3
+    list.size <= Constants.maxNumberRoutes
   }
 
 }

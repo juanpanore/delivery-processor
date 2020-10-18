@@ -14,7 +14,7 @@ object File {
 
   def write(path: String, number: Int, coodinates: List[String]): Unit = {
 
-    new PrintWriter(path.concat("out0".concat(number.toString)) + ".txt") {
+    new PrintWriter(path.concat("out".concat(if (number < 10) "0" else "").concat(number.toString)).concat(Constants.fileType)) {
       coodinates.map(coodinate => {
         write(coodinate.concat(Constants.lineSeparator))
       });

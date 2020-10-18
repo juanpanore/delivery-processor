@@ -3,4 +3,5 @@ object Constants {
   val outputFilePath = "src/main/resource/out/"
   val lineSeparator = "\n"
   val fileType = ".txt"
+  val maxNumberRoutes = 3
 }
