@@ -1,33 +1,32 @@
 object CoordinatesCalculator {
   def calculateRouteInPlane(route: String): String = {
-    var x, y: Int = 0
-    var direction: String = "Norte"
+    var coordinate = new Coordinates(0, 0, "Norte")
     route.map(step => {
-      direction match {
+      coordinate.direction match {
         case "Norte" => step match {
-          case 'A' => x += 1
-          case 'I' => direction = "Oriente"
-          case 'D' => direction = "Occidente"
+          case 'A' => coordinate.moveX(1)
+          case 'I' => coordinate.moveDirection("Oriente")
+          case 'D' => coordinate.moveDirection("Occidente")
         }
         case "Sur" => step match {
-          case 'A' => x -= 1
-          case 'I' => direction = "Occidente"
-          case 'D' => direction = "Oriente"
+          case 'A' => coordinate.moveX(-1)
+          case 'I' => coordinate.moveDirection("Occidente")
+          case 'D' => coordinate.moveDirection("Oriente")
         }
         case "Oriente" => step match {
-          case 'A' => y -= 1
-          case 'I' => direction = "Sur"
-          case 'D' => direction = "Norte"
+          case 'A' => coordinate.moveY(-1)
+          case 'I' => coordinate.moveDirection("Sur")
+          case 'D' => coordinate.moveDirection("Norte")
 
         }
         case "Occidente" => step match {
-          case 'A' => y += 1
-          case 'I' => direction = "Norte"
-          case 'D' => direction = "Sur"
+          case 'A' => coordinate.moveY(1)
+          case 'I' => coordinate.moveDirection("Norte")
+          case 'D' => coordinate.moveDirection("Sur")
         }
       }
     })
-    "(".concat(y.toString().concat(",".concat(x.toString.concat(") ".concat("dirección ".concat(direction))))))
+    "(".concat(coordinate.y.toString().concat(",".concat(coordinate.x.toString.concat(") ".concat("dirección ".concat(coordinate.direction))))))
   }
 
 

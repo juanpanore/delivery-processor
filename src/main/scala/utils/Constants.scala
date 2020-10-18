@@ -1,5 +1,6 @@
 object Constants {
-  val inputFilePath = "src/main/resource/in/in01.txt"
+  val inputFilePath = "src/main/resource/in/"
   val outputFilePath = "src/main/resource/out/"
-
+  val lineSeparator = "\n"
+  val fileType = ".txt"
 }
