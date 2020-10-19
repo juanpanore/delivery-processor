@@ -1,6 +1,6 @@
 object CoordinatesCalculator {
   def calculateRouteInPlane(route: String): String = {
-    var coordinate = new Coordinates(0, 0, "Norte")
+    var coordinate = new Coordinates(Constants.yInit, Constants.xInit, Constants.directionInit)
     route.map(step => {
       coordinate.direction match {
         case "Norte" => step match {

@@ -9,5 +9,6 @@ build/
 *.ipr
 *.iws
 .idea
+.bsp
 # mac
 .DS_Store
